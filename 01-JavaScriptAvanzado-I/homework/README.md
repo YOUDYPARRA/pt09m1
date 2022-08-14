@@ -89,9 +89,9 @@ parseInt("09")//9
 2 && 5//5
 5 || 0//5
 0 || 5//5
-[3]+[3]-[10]//23(revisar porque)
+[3]+[3]-[10]//23(primero concatena 33 y luego resta 10)
 3>2>1//false
-[] == ![](revisar porque)
+[] == ![]evalua valores boleanos
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
