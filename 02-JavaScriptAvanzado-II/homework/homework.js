@@ -28,10 +28,20 @@ function counter() {
 }
 
 function cacheFunction(cb) {
+  var  objeto={};
+  return function(arg){
+    if(objeto.hasOwnProperty(arg)){
+      return objeto[arg];
+    }else{
+      objeto[arg]=cb(arg);
+  }
+
+  }
   /*
   Ejercicio 2
 
-  Tu tarea aquí es lograr, mediante un closure, que cacheFunction actúe como una memoria caché para el callback que recibe por parámetro (cb);
+  Tu tarea aquí es lograr, mediante un closure, que cacheFunction actúe como una memoria caché para 
+  el callback que recibe por parámetro (cb);
    es decir, que "recuerde" el resultado de cada operación que hace,
     de manera que, al realizar una operación por segunda vez, se pueda obtener el resultado de esa "memoria" 
     sin tener que efectuar otra vez cálculos que ya se hicieron anteriormente.
@@ -43,6 +53,11 @@ function cacheFunction(cb) {
   Ejemplo:
   function square(n){
     return n * n
+  }
+  {
+    key: valor,
+    key1: valor1,
+
   }
   const squareCache = cacheFunction(square)
   squareCache(5)    // invocará a square(5), almacenará el resultado y lo retornará
